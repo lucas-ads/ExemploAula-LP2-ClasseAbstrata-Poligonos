@@ -21,16 +21,18 @@ public class Quadrado extends FormaBidimensional{
 		this.lado = lado;
 	}
 
+	@Override
 	public double getArea() {
 		return this.lado * this.lado;
 	}
 
+	@Override
 	public double getPerimetro(){
 		return this.lado * 4;
 	}
 	
 	@Override
 	public String toString() {
-		return super.toString() + this.getClass().getSimpleName() + ":\nLado = " + this.lado + "\n";
+		return super.toString() + this.getClass().getSimpleName() + ":\nLado = " + this.lado;
 	}
 }

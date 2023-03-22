@@ -32,10 +32,19 @@ public class Programa {
 		
 		for(FormaBidimensional fb : poligonos){
 			System.out.println( fb.toString() );
+			System.out.println( "Área: " +  fb.getArea() + "\n");
 		}
 		
 		//Falta especificar os métodos abstratos getArea() e getPerimetro() na classe
 		//FormaBidimensional e implementá-los na classe Circulo.
+		
+		/*Triangulo triangulo = null;// = new T
+		
+		triangulo.setAltura(10);
+		triangulo.setBase(15);
+		triangulo.setCor("Azul");
+		
+		System.out.println("Área do triângulo: " + triangulo.getArea());*/
 		
 	}
 

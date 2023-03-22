@@ -35,6 +35,10 @@ public abstract class FormaBidimensional extends Forma{
 		this.espessuraDaBorda = espessuraDaBorda;
 	}
 	
+	public abstract double getArea();
+	
+	public abstract double getPerimetro();
+	
 	@Override
 	public String toString() {
 		return String.format("-Forma Bidimensional:\nCor: %s\nCor da borda: %s\nEspessura da borda: %f\n", this.getColor(), this.corDaBorda, this.espessuraDaBorda);
