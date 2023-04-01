@@ -35,4 +35,9 @@ public class Circulo extends FormaBidimensional{
 	public String toString() {
 		return super.toString() + this.getClass().getSimpleName() + ":\nRaio = " + this.raio;
 	}
+
+	@Override
+	public void redimensiona(double coeficiente) {
+		this.raio = this.raio * coeficiente;
+	}
 }

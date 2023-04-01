@@ -3,14 +3,20 @@ package views;
 import java.util.ArrayList;
 import java.util.List;
 
+import componentes.CaixaDeTexto;
 import formas.Circulo;
 import formas.Forma;
 import formas.FormaBidimensional;
 import formas.Quadrado;
+import formas.TrianguloRetangulo;
+import interfaces.ITrianguloRetangulo;
+import interfaces.Redimensionavel;
 
 public class Programa {
 
 	public static void main(String[] args) {
+		
+		System.out.println("\n############### Testando classes abstratas ###############\n");
 		
 		List<FormaBidimensional> poligonos = new ArrayList<FormaBidimensional>();
 		
@@ -35,20 +41,55 @@ public class Programa {
 			System.out.println( "Área: " +  fb.getArea() + "\n");
 		}
 		
-		//Falta especificar os métodos abstratos getArea() e getPerimetro() na classe
-		//FormaBidimensional e implementá-los na classe Circulo.
+		System.out.println("\n############### Testando a interface ITrianguloRetangulo ###############\n");
 		
-		/*Triangulo triangulo = null;// = new T
+		ITrianguloRetangulo tr = new TrianguloRetangulo(0, 0);
 		
-		triangulo.setAltura(10);
-		triangulo.setBase(15);
-		triangulo.setCor("Azul");
+		tr.setBase(8);
+		tr.setAltura(5);
+		System.out.println("Base: " + tr.getBase());
+		System.out.println("Altura: " + tr.getAltura());
+		System.out.println("Área: " + tr.getArea());
+		System.out.println("Perímetro: " + tr.getPerimetro());
 		
-		System.out.println("Área do triângulo: " + triangulo.getArea());*/
+		System.out.println("\n############### Testando generalização de tipo com a interface Redimensionavel ###############\n");
+		
+		List<Redimensionavel> objetos = new ArrayList<Redimensionavel>();
+		
+		CaixaDeTexto ct = new CaixaDeTexto();
+		ct.setTexto("Counter-Terrorist");
+		ct.setTamanhoFonte(12);
+		
+		Forma quadrado = new Quadrado(5);
+		
+		Redimensionavel circulo = new Circulo(8);
+		
+		objetos.add(ct);
+		objetos.add(quadrado);
+		objetos.add(circulo);
+		
+		for(Redimensionavel ob : objetos) {
+			ob.redimensiona(1.5);
+		}
+		
+		for(Redimensionavel ob : objetos) {
+			System.out.println(ob.toString() + '\n');
+		}
 		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
